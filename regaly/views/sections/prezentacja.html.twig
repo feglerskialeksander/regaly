@@ -12,12 +12,12 @@
     <div class="row my-3">
 
         {% for item in sekcja.ext.zdjecia %}
-        <div class="col-12 col-md">
-            <h5>
-                {{ item.nazwa | raw}}
-            </h5>
-            <img class="img-fluid" src="{{ item.zdjecie }}" alt="">
-        </div>
+            <div class="col-12 {% if item.col %}col-md-{{ item.col }}{% else %}col-md{% endif %}">
+                <h5>
+                    {{ item.nazwa | raw}}
+                </h5>
+                <img class="img-fluid" src="{{ item.zdjecie }}" alt="">
+            </div>
         {% endfor %}
 
     </div>
