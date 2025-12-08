@@ -1,0 +1,28 @@
+{# Strona główna - /homepage #}
+
+{% extends "index.html.twig" %}
+
+{% block header %}
+    {% if header.sections and header.template != '' %}
+        {% include header.template with {sections: header.sections} %}
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% for section in sections %}
+        {% if section.type.template != '' %}
+            {% include section.type.template with {content: section.content, name: section.name} %}
+            {% include 'common/debug.html.twig' %}
+        {% else %}
+            <h1>Błąd: niezdefiniowany szablon sekcji</h1>
+            {{ pre(section) }}
+        {% endif %}
+    {% endfor %}
+    {% include 'common/debug-general.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% if footer.sections and footer.template != '' %}
+        {% include footer.template with {sections: footer.sections} %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{# Special (footer,header) #}
+
+{% for section in sections %}
+    {% if section.type.template != '' %}
+        {% include section.type.template with {content: section.content, name: section.name} %}
+    {% else %}
+        <h1>Błąd: niezdefiniowany szablon sekcji</h1>
+        {{ pre(section) }}
+    {% endif %}
+{% endfor %}

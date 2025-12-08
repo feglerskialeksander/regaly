@@ -1,0 +1,28 @@
+<div class="container container2 text-center my-3" style="border: 1px solid black; width: 100%;">
+
+    <div>
+        {{ content.opis_gora | raw }}
+    </div>
+
+    <div class="row">
+
+        {% for item in content.lista %}
+        <div class="col">
+            <h5>
+                {{ item.opis | raw}}
+            </h5>
+            <img class="img-fluid" src="{{ item.zdjecie }}" alt="">
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+
+
+
+
+    <div class="my-3">
+        {{ content.opis_dol | raw }}
+    </div>
+</div>

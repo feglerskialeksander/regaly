@@ -1,0 +1,21 @@
+<section>
+    <div class="container container2 text-center" id="page1 d-flex">
+        <div class="row">
+            <div class="col-12">
+                <img src="{{ content.zdjecie}}" alt="" class="img-fluid w-100">
+                <div>
+                    {{ content.tekst | raw}}
+                </div>
+            </div>
+            <div class="row">
+                {% for item in content.lista %}
+                <div class="col-md-4">
+                    <img src="{{ item.zdjecie }}" alt="" class="img-fluid">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include debug %}

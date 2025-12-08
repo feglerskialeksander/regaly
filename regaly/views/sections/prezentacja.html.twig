@@ -1,0 +1,94 @@
+{% for sekcja in content.wpis.subs %}
+{% if sekcja.type_id == 3 %}
+<div class="container container2 text-center my-3" style="border: 1px solid black; width: 100%;">
+
+    <div>
+        {{ sekcja.opis_gora | raw }}
+    </div>
+
+    <div class="row">
+
+        {% for item in sekcja.ext.zdjecia %}
+        <div class="col">
+            <h5>
+                {{ item.opis | raw}}
+            </h5>
+            <img class="img-fluid" src="{{ item.zdjecie }}" alt="">
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="my-3">
+        {{ sekcja.opis_dol | raw }}
+    </div>
+</div>
+{% endif %}
+
+{% if sekcja.type_id == 4 %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <img src="{{ sekcja.zdjecie}}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% if sekcja.type_id == 5 %}
+<div class="container container2 my-4 text-center" id="page{{ loop.index }}">
+
+        <div class="" style="border: 1px solid black; width: 100%;">
+            <div> 
+            {{ sekcja.tytul | raw}}
+                </div>
+            <br>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class=" shadow-sm szerokosc"
+                        style="border: 1px solid black; width: 95%; height: 95%; border-radius: 3rem; margin: 5px;">
+
+                        <div
+                            class="row row-cols-2 row-cols-sm-3 row-cols-lg-6 row-cols-xl-auto justify-content-center g-3 g-lg-4 align-items-end dluzsze">
+                            {% for item in sekcja.ext.lista_gora %}
+                            <div class="col text-center">
+                                <img src="{{ item.zdjecie }}" class="img-fluid" alt=" {{ item.opis }}">
+                                <p class="small fw-bold mt-2"> {{ item.opis }}</p>
+
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                {% for item in sekcja.ext.lista_dol %}
+
+                <div class="col-12 col-md-4 mx-1">
+                    <div class=" shadow-sm szerokosc"
+                        style="border: 1px solid black; width: 90%; height: 95%; border-radius: 3rem; margin: 5px;">
+                        <img class="img-fluid" src=" {{ item.zdjecie }}" alt="{{ item.opis }}">
+                        <h5> {{ item.opis }}</h5>
+                    </div>
+                </div>
+
+             {% endfor %}
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+{% endif %}
+{% endfor %}
+
+{% include debug %}
