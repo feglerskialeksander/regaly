@@ -1,0 +1,39 @@
+<div style="background-color: #00637C; font-family: Rubik; " class="my-5">
+
+    <div style="color: white; padding-top: 50px;">
+        {{ content.tytul | raw}}
+    </div>
+    <div class="container" style="width: 70%;">
+
+        <div class="row ">
+
+            {% for item in content.lista %}
+            <div class="col-12 col-md">
+
+                <div style="color: white;">
+                    {{ item.liczba | raw}}
+
+                </div>
+                <div style="color: white;">
+                    {{ item.tekst | raw}}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <img src="{{ content.ikona }}" alt="" class="img-fluid d-block mx-auto" style="margin-top: 4rem;">
+
+        <div style="color: white;">
+            {{ content.opis | raw}}
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn" style="color: white; width: 200px; height: 5%; margin-top: 1rem;">
+                {{content.button_tekst | raw}}
+            </button>
+        </div>
+    </div>
+
+</div>

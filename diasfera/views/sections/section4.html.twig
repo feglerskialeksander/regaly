@@ -1,0 +1,26 @@
+<div class="container-fluid gotowiec__container text-center my-3"
+    style="background-image: url('{{ content.tlo}}'); min-height: 100%;">
+
+    <div class="row row_bialy">
+        <div class="col-12">
+            <div class="biale_tytul" style="font-family: Rubik; font-weight: lighter; color: white;">
+                {{ content.tytul | raw}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto" style="width: 80%;">
+        {% for item in content.lista %}
+        <div class="col-12 col-md biale ">
+            <img src="{{ item.ikona}}" alt="" class="img-fluid biale_margin">
+            <div class="biale_margin">
+                {{ item.napis_gora | raw}}
+            </div>
+
+            <div class="biale_margin">
+                {{ item.napis_dol | raw}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

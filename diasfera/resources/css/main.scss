@@ -40,23 +40,13 @@ img{
 background-color: $pomaranczowy;
 margin-bottom: 3rem;
 }
-
-
-
-.row {
-    --bs-gutter-x: 10px; /* Zmienna CSS w B5, ale może Pan też nadpisać padding w starszych wersjach */
-}
-
-/* W starszych wersjach (B4) */
 .row > [class^="col-"],
 .row > [class*=" col-"] {
-    padding-right: 0px; /* Nadpisuje połowę domyślnego paddingu */
-    padding-left: 0px;  /* Nadpisuje połowę domyślnego paddingu */
+    padding-right: 0px;
+    padding-left: 0px;
+
 }
-
-
 html {
-    /* Ustawienia bazowej czcionki dla skalowania rem */
     font-size: 16px;
     overflow-x: hidden;
 }
@@ -69,7 +59,6 @@ h2 {
     font-size: 3rem;
 }
 
-/* Skalowanie czcionki dla różnych szerokości ekranu (Breakpointy globalne) */
 @media (max-width: 1681px) {
     html {
         font-size: 14px;
@@ -107,6 +96,34 @@ h2 {
     width: 96%;
 }
 
+.biale {
+    background-color: rgba(255, 255, 255, 0.9); 
+    margin: 30px; 
+    padding: 20px; 
+    height: 100% !important;
+    margin-bottom: 100px;
+    text-align: left;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+}
+.biale_tytul{
+    margin-top: 100px;
+}
+.biale_margin{
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+}
+
+
+
+.biale img {
+    margin-bottom: 15px;
+    height: 50px;
+    width: auto;
+}
+
+
 @media (max-width: 769px) {
     .gotowiec__container {
         max-width: 100%;
@@ -123,7 +140,7 @@ h2 {
 
 
 .gotowiec-top__content {
-    background-color: #00637C; /* Ciemnoturkusowe tło */
+    background-color: #00637C;
     color: #fff;
 }
 
@@ -136,7 +153,6 @@ h2 {
 }
 
 .gotowiec-top__title::after {
-    /* Pomarańczowa linia pod nagłówkiem */
     background: #EE982B;
     clip-path: polygon(0 .375rem, 100% 0, 100% 100%, 0 .625rem);
     content: "";
@@ -144,12 +160,8 @@ h2 {
     height: .625rem;
     margin-top: .5rem;
     background-repeat: no-repeat;
-
-    /* === DODANE DLA WYŚRODKOWANIA === */
     width: 90%;
-    // margin-left: auto;
     margin-right: auto;
-    /* ================================== */
 }
 
 .gotowiec-top__subtitle {
@@ -176,9 +188,6 @@ h2 {
     object-fit: cover;
 }
 
-/* Media Queries dla sekcji górnej */
-
-/* Dla urządzeń pośrednich, np. tablet w poziomie */
 @media screen and (min-width: 768px) and (max-width: 1224px) and (orientation: landscape) {
     .gotowiec-top__icon {
         max-height: 4rem;
@@ -233,21 +242,9 @@ h2 {
     }
 }
 
-
-// .gotowiec-galeria__slide img {
-//     /* Ustaw maksymalną stałą wysokość */
-//     max-height: 200px; 
-//     height: 100%; /* Upewniamy się, że img wypełni całe dostępne miejsce w slajdzie */
-    
-//     /* Zapewniamy, że obraz zostanie przycięty, a nie rozciągnięty */
-//     object-fit: cover; 
-// }
-
 .slick-prev:before,
 .slick-next:before {
-    
-    
-    /* Opcjonalnie: Zwiększ rozmiar strzałek, jeśli są zbyt małe */
+
     font-size: 30px; 
 }
 
@@ -291,7 +288,6 @@ h2 {
     font-size: 3rem;
 }
 
-/* Media Queries dla galerii */
 @media (max-width: 600px) {
     .gotowiec-galeria .slick-arrow:before {
         color: #000;
@@ -309,11 +305,6 @@ h2 {
 }
 
 
-.gotowiec-kroki {
-    background: #00637C;
-    color: #fff;
-}
-
 .gotowiec-kroki__step {
     color: #EE982B;
     font-size: 5.375rem;
@@ -323,7 +314,6 @@ h2 {
 }
 
 .gotowiec-kroki__step::after {
-    /* Stylizacja numeru kroku */
     content: url(/resources/img/ellipse.png);
     display: block;
     height: 3rem;
@@ -338,7 +328,6 @@ h2 {
     font-weight: 500;
 }
 
-/* Media Queries dla kroków */
 @media (max-width: 1024px) {
     .gotowiec-kroki h3 {
         font-size: 1.5rem;
@@ -372,3 +361,5 @@ h2 {
         width: 2rem;
     }
 }
+
+

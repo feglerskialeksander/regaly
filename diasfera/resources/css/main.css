@@ -32,10 +32,6 @@
   background-color: #EE982B;
   margin-bottom: 3rem;
 }
-.row {
-  --bs-gutter-x: 10px;
-  /* Zmienna CSS w B5, ale może Pan też nadpisać padding w starszych wersjach */
-}
 /* W starszych wersjach (B4) */
 .row > [class^="col-"], .row > [class*=" col-"] {
   padding-right: 0px;
@@ -84,6 +80,29 @@ h2 {
   max-width: 96%;
   padding: 0 2%;
   width: 96%;
+}
+.biale {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 30px;
+  padding: 20px;
+  height: 100% !important;
+  margin-bottom: 100px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.biale_tytul {
+  margin-top: 100px;
+}
+.biale_margin {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+.biale img {
+  margin-bottom: 15px;
+  height: 50px;
+  width: auto;
 }
 @media (max-width: 769px) {
   .gotowiec__container {
@@ -244,10 +263,6 @@ h2 {
   .gotowiec-galeria__slider .slick-slide {
     padding: 0;
   }
-}
-.gotowiec-kroki {
-  background: #00637C;
-  color: #fff;
 }
 .gotowiec-kroki__step {
   color: #EE982B;
