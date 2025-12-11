@@ -1,18 +1,20 @@
 <section class="gotowiec-mieszkanie my-5 py-5 trigger">
     <div class="container gotowiec__container-small">
         <div class="row align-items-center">
-            <div class="col-12 col-lg-7 col-md-6 d-md-block d-none  fadeLeft   order-lg-">
+
+            <div class="col-12 col-md-7 d-block gotowiec-mieszkanie__right">
                 <img src="{{ content.zdjecie }}" class="img-fluid w-100" style="max-height: 100%;" alt="Wizualizacja">
             </div>
 
-            <div class="col-12 col-lg-5 col-md-6  gotowiec-mieszkanie__left fadeRight order-md-0"
-                style="padding-left: 100px;">
-                <div>
+            <div class="col-12 col-md-5 gotowiec-mieszkanie__left przesuniecie">
+
+                <div class="srodek text-center text-md-left">
                     {{ content.tytul | raw}}
                 </div>
-                <div class="row my-md-5">
+
+                <div class="row my-5 px-3 px-md-0">
                     {% for item in content.lista %}
-                    <div class="col-12 col-md gotowiec-mieszkanie__number">
+                    <div class="col col-md gotowiec-mieszkanie__number text-center">
                         <div>
                             {{ item.gora | raw}}
                         </div>
@@ -21,17 +23,21 @@
                         </div>
                     </div>
                     {% endfor %}
-
                 </div>
 
-                <div class="mt-5 mt-lg-0">
+                <div class="mt-5 mt-lg-0 text-center text-md-left opis">
                     {{ content.opis | raw}}
                 </div>
-                <button type="button" class="btn" style="color: white; width: 300px; height: 5%; margin-top: 4rem;">
-                    {{content.button_tekst | raw}}
-                </button>
 
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <button type="button" class="btn"
+                        style="color: white; width: 100%; max-width: 300px; height: 5%; margin-top: 2rem;">
+                        {{content.button_tekst | raw}}
+                    </button>
+                </div>
             </div>
+
+
 
         </div>
     </div>

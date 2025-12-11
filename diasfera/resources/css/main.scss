@@ -13,14 +13,42 @@ $niebieski: #00637C;
     text-align: center !important;
     justify-content: center !important;
     margin-left: 0% !important;
-    margin-top: 0% !important;
+    margin-top: 2rem !important;
 
     }
- .container2 {
+    .container2 {
                 max-width: 100% !important;
                 width: 100%;
             }
+
+    .gotowiec-mieszkanie__left .srodek {
+        text-align: center;
+    }
+
+    .gotowiec-mieszkanie__left .btn {
+        text-align: center;
+    }
 }
+
+@media (min-width: 780px) {
+.row_bialy2{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.przesuniecie{
+    padding-left: 100px !important;
+}
+}
+
+
+@media (max-width: 780px) {
+.row_bialy2{
+    width: 93% !important;
+}
+
+}
+
+
 .header_zdjecie
 img{
     min-height: 100%;
