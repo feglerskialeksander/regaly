@@ -1,0 +1,60 @@
+<section class="gotowiec-top mt-4 trigger">
+    <div class="container-fluid gotowiec__container text-center my-3">
+
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4 order-md-0 order-1 gotowiec-top__content">
+                <div class="lewo"></div>
+                <div class="naglowek text-center text-xl-left fadeDown naglowek">
+                    <div>
+                        {{ content.naglowek | raw }}
+                    </div>
+
+                    <!-- <div style="width: 250px; height: 3px; margin-bottom: 5px; background-color: #EE982B;"></div> -->
+                    <div class="gotowiec-top__subtitle text-center text-xl-left fadeDown my-2">
+                        {{ content.tekst1 | raw }}
+                    </div>
+
+                    <div class="my-5 my-lg-5 my-3 text-center gotowiec-top__desc text-xl-left fadeDown">
+                        {{ content.tekst2 | raw }}
+                    </div>
+
+                </div>
+
+                <div class=" row">
+                    {% for item in content.zdjecia %}
+                    <div class="col-12 col-md my-5" style="margin-left: 0.5rem;">
+
+                        <img class="img-fluid" src="{{ item.zdjecie }}" alt="zdjecie">
+
+                        <br>
+                        <h5>
+                            {{ item.opis | raw}}
+                        </h5>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button type="button" class="btn" style="color: white; width: 300px; height: 5%; margin-top: 4rem;">
+                    {{content.guzik_tekst | raw}}</button>
+
+            </div>
+
+
+
+
+            <div class="col-12 col-md-8 order-md-1 order-0 header_zdjecie">
+                <img class="img-fluid w-100 gotowiec-top__wizka" src="{{ content.zdjecie2 }}" alt="">
+            </div>
+
+        </div>
+
+        <br>
+
+
+    </div>
+
+</section>
+
+
+
+{% include debug %}

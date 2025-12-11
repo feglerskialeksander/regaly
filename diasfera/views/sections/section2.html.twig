@@ -1,0 +1,44 @@
+<section class="gotowiec-mieszkanie my-5 py-5 trigger">
+    <div class="container gotowiec__container-small">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-5 col-md-6  gotowiec-mieszkanie__left fadeRight order-md-0">
+                <div>
+                    {{ content.tytul | raw}}
+                </div>
+                <div class="row my-md-5">
+                    {% for item in content.lista %}
+                    <div class="col-12 col-md gotowiec-mieszkanie__number">
+                        <div>
+                            {{ item.gora | raw}}
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            {{ item.dol | raw}}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <div class="mt-5 mt-lg-0">
+                    {{ content.opis | raw}}
+                </div>
+                <button type="button" class="btn" style="color: white; width: 300px; height: 5%; margin-top: 4rem;">
+                    {{content.button_tekst | raw}}
+                </button>
+
+            </div>
+            <div class="col-12 col-lg-7 col-md-6 d-md-block d-none  fadeLeft   order-lg-">
+                <img src="{{ content.zdjecie }}" class="img-fluid w-100" style="max-height: 100%;" alt="Wizualizacja">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- {# {% for item in content.zdjecia %}
+<div>
+    <a href="{{ item.zdjecie }}" class="gotowiec-galeria__slide" data-fancybox="Galeria">
+        <img src="{{ item.zdjecie }}" class="img-fluid" alt="{{ item.opis }}">
+    </a>
+</div>
+{% endfor %} #} -->

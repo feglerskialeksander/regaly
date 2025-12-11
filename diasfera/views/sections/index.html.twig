@@ -1,0 +1,83 @@
+{# Layout - /index #}
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<base href="{{ doc_root }}">
+	<meta name="author" content="" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="{{ meta_desc }}" />
+	<meta name="keywords" content="{{ meta_tags }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="{{ title}}">
+	<meta property="og:image" content="{{ meta_image }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,700">
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ minify('resources/css/main.scss') }}">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900|Rubik:400,500,700&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	{% include 'common/head-extra.html.twig' %}
+	{% endblock %}
+</head>
+
+<body>
+	{% include 'common/body-extra.html.twig' %}
+	<header>
+		{% block header %}{% endblock %}
+	</header>
+	<main>
+		{% block main %}{% endblock %}
+	</main>
+	<footer>
+		{% block footer %}{% endblock %}
+	</footer>
+	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ minify('resources/js/main.js') }}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        
+        // Inicjalizacja Slick Carousel:
+        if ( $('.gotowiec-galeria__slider').length ) {
+            
+            $('.gotowiec-galeria__slider').slick({
+                // Ustawienia podstawowe, żeby zobaczyć trzy zdjęcia naraz:
+                slidesToShow: 1,        
+                slidesToScroll: 1,      
+                centerMode: true,       
+                centerPadding: '10px', 
+                infinite: true,
+                dots: false,
+                arrows: true, // Włącza strzałki nawigacyjne
+                
+                // Ustawienia responsywności
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 1,
+                            centerPadding: '40px'
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: false // Wyłączamy centrowanie na małych ekranach
+                        }
+                    }
+                ]
+            });
+        }
+    });
+</script>
+</body>
+
+</html>

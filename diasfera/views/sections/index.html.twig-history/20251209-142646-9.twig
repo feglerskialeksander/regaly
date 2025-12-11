@@ -1,0 +1,41 @@
+{# Layout - /index #}
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<base href="{{ doc_root }}">
+	<meta name="author" content="" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="{{ meta_desc }}" />
+	<meta name="keywords" content="{{ meta_tags }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="{{ title}}">
+	<meta property="og:image" content="{{ meta_image }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,700">
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ minify('resources/css/main.scss') }}">
+	{% include 'common/head-extra.html.twig' %}
+	{% endblock %}
+</head>
+
+<body>
+	{% include 'common/body-extra.html.twig' %}
+	<header>
+		{% block header %}{% endblock %}
+	</header>
+	<main>
+		{% block main %}{% endblock %}
+	</main>
+	<footer>
+		{% block footer %}{% endblock %}
+	</footer>
+	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ minify('resources/js/main.js') }}"></script>
+</body>
+
+</html>

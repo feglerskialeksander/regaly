@@ -1,0 +1,22 @@
+<section class="gotowiec-galeria trigger">
+    <div class="container gotowiec__container-small">
+        <div class="row">
+            <div class="col-12 fadeDown">
+                <h2 class="text-center">Galeria</h2>
+            </div>
+        </div>
+        
+        <div class="gotowiec-galeria__slider fadeUp my-5"> 
+            
+            {% for item in content.lista %}
+                <div>
+                    <a href="{{ item.zdjecie }}" class="gotowiec-galeria__slide" data-fancybox="Galeria">
+                        <img src="{{ item.zdjecie }}" class="img-fluid" alt="{{ item.opis }}">
+                    </a>
+                </div>
+            {% endfor %}
+            
+        </div>
+        
+    </div>
+</section>
