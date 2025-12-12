@@ -1,20 +1,22 @@
 <section class="gotowiec-galeria trigger my-5">
     <div class="container gotowiec__container-small">
         <div class="row">
-            <div class="col-12 fadeDown">
-                <h2 class="text-center">Galeria</h2>
+            <div class="col-12 fadeDown text-center">
+                {{ content.tytul | raw}}
             </div>
         </div>
         
-        <div class="gotowiec-galeria__slider fadeUp my-5 px-sm-3 px-md-0"> 
+        <div class="row gotowiec-galeria__slider fadeUp my-5 px-sm-3 px-md-0"> 
             
             {% for item in content.lista %}
-                <div>
-                    <a href="{{ item.zdjecie }}" class="gotowiec-galeria__slide" data-fancybox="Galeria">
-                        <img src="{{ item.zdjecie }}" class="img-fluid" alt="{{ item.opis }}">
-                    </a>
-                </div>
-            {% endfor %}
+                {% if item.zdjecie %}
+                <div>
+                    <a href="{{ cdn(item.zdjecie) }}" class="gotowiec-galeria__slide">
+                        <img src="{{ cdn(item.zdjecie) }}" class="img-fluid" alt="{{ item.opis }}">
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
             
         </div>
         

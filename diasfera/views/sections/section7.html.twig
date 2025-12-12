@@ -1,8 +1,9 @@
 <div class="container text-center">
-
+    {%if content.tytul %}
     <div>
         {{ content.tytul | raw}}
     </div>
+    {% endif %}
 
     <div class="row" style="margin-top: 4rem; padding-bottom: 4rem; font-family: Rubik;">
         {% for item in content.lista %}
@@ -12,10 +13,12 @@
                 {{ item.opis | raw}}
 
             </div>
+            {% if item.logo %}
             <div>
-                <img src="{{ item.logo }}" alt="" class="img-fluid">
+                <img src="{{ cdn(item.logo) }}" alt="zdjecie" class="img-fluid">
 
             </div>
+            {% endif %}
 
         </div>
 

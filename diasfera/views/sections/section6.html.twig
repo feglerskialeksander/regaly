@@ -24,7 +24,7 @@
             {% endfor %}
 
         </div>
-        <img src="{{ content.ikona }}" alt="" class="img-fluid d-block mx-auto" style="margin-top: 4rem;">
+        <img src="{{ cdn(content.ikona) }}" alt="zdjecie" class="img-fluid d-block mx-auto" style="margin-top: 4rem;">
 
         <div style="color: white;">
             {{ content.opis | raw}}

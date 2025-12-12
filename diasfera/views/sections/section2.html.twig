@@ -10,6 +10,8 @@
 
                 <div class="row my-5 px-3 px-md-0">
                     {% for item in content.lista %}
+                    {%if item.gora and item.dol %}
+
                     <div class="col col-md gotowiec-mieszkanie__number text-center">
                         <div>
                             {{ item.gora | raw}}
@@ -18,24 +20,31 @@
                             {{ item.dol | raw}}
                         </div>
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
-
+                {%if content.opis %}
                 <div class="mt-5 mt-lg-0 text-center text-md-left opis">
                     {{ content.opis | raw}}
                 </div>
-
+                {% endif %}
+                {%if content.button_tekst %}
                 <div class="d-flex justify-content-center justify-content-md-start">
                     <button type="button" class="btn"
                         style="color: white; width: 100%; max-width: 300px; height: 5%; margin-top: 2rem;">
                         {{content.button_tekst | raw}}
                     </button>
                 </div>
+                {% endif %}
             </div>
+            {%if content.zdjecie %}
 
             <div class="col-12 col-md-7 d-block gotowiec-mieszkanie__right">
-                <img src="{{ content.zdjecie }}" class="img-fluid w-100" style="max-height: 100%;" alt="Wizualizacja">
+                <img src="{{ cdn(content.zdjecie) }}" class="img-fluid w-100" style="max-height: 100%;"
+                    alt="Wizualizacja">
             </div>
+
+            {% endif %}
 
         </div>
     </div>

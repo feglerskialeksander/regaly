@@ -4,7 +4,7 @@
         <div class="row align-items-center" style="background-color: #00637C;">
             <div class=" col-12 col-md-4 order-md-0 order-1 gotowiec-top__content">
                 <div class="lewo"></div>
-                <div class="naglowek text-center text-xl-left fadeDown naglowek">
+                <div class="naglowek text-center text-xl-left fadeDown">
                     <div>
                         {{ content.naglowek | raw }}
                     </div>
@@ -22,15 +22,17 @@
 
                 <div class=" row">
                     {% for item in content.zdjecia %}
+                    {% if item.opis and item.zdjecie %}
                     <div class="col my-5" style="margin-left: 0.5rem;">
 
-                        <img class="img-fluid" src="{{ item.zdjecie }}" alt="zdjecie">
+                        <img class="img-fluid" src="{{ cdn(item.zdjecie) }}" alt="zdjecie">
 
                         <br>
                         <h5>
                             {{ item.opis | raw}}
                         </h5>
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
 
@@ -41,10 +43,12 @@
 
 
 
-
+            {%if content.zdjecie2 %}
             <div class="col-12 col-md-8 order-md-1 order-0 header_zdjecie">
-                <img class="img-fluid w-100 gotowiec-top__wizka" src="{{ content.zdjecie2 }}" alt="">
+                <img class="img-fluid w-100 gotowiec-top__wizka" src="{{ cdn(content.zdjecie2) }}" alt="zdjecie">
             </div>
+            {% endif %}
+
 
         </div>
 

@@ -47,43 +47,6 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script type="text/javascript" src="{{ minify('resources/js/main.js') }}"></script>
-
-    <script>
-        $(document).ready(function(){
-            if ( $('.gotowiec-galeria__slider').length ) {
-                
-                $('.gotowiec-galeria__slider').slick({
-                    slidesToShow: 2, 
-                    slidesToScroll: 1,
-                    centerMode: false,
-                    centerPadding: '0px', 
-                    infinite: true,
-                    dots: false,
-                    arrows: true,
-                    responsive: [
-                        {
-                            // Dla tabletów (992px i w dół)
-                            breakpoint: 992,
-                            settings: {
-                                slidesToShow: 1,
-                                centerMode: false,
-                                centerPadding: '40px'
-                            }
-                        },
-                        {
-                            // Dla smartfonów (768px i w dół)
-                            breakpoint: 768,
-                            settings: {
-                                slidesToShow: 1,
-                                centerMode: false,
-                                centerPadding: '0px' 
-                            }
-                        }
-                    ]
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>

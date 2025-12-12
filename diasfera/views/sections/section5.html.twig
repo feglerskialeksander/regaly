@@ -1,10 +1,12 @@
 <section class="gotowiec-mieszkanie my-5 py-5 trigger">
     <div class="container gotowiec__container-small">
         <div class="row align-items-center">
-
+            {% if content.zdjecie %}
             <div class="col-12 col-md-7 d-block gotowiec-mieszkanie__right">
-                <img src="{{ content.zdjecie }}" class="img-fluid w-100" style="max-height: 100%;" alt="Wizualizacja">
+                <img src="{{ cdn(content.zdjecie) }}" class="img-fluid w-100" style="max-height: 100%;"
+                    alt="Wizualizacja">
             </div>
+            {% endif %}
 
             <div class="col-12 col-md-5 gotowiec-mieszkanie__left przesuniecie">
 
